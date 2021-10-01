@@ -6,11 +6,8 @@ $input-text: #929292;
 $bg-light: #f7f7f7;
 $bg-dark: #1a1c28;
 $res_768 :" only screen and (min-width: 768px) and (max-width: 1179px)";
-@mixin responsive_768px(){
-  @media #{$res_768} {
-    @content;
-}
-}
+
+
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
@@ -38,6 +35,7 @@ img {
     &-list {
       display: flex;
       align-items: center;
+      
       
     }
     &-item {
@@ -433,18 +431,94 @@ font-weight: bold;
  }
 }
 }
+@media only screen and (min-width: 768px) {
+	.btn__collapse {
+		display: none;
+	}
+}
 
+@media only screen and (max-width: 1179px) {
+	.section-item-content-top {
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
+}
 
+@media only screen and (max-width: 767px) {
 
-// @include responsive_768px{
-//   .container{
-//     margin: 0px 10px;
-//   }
-//   .section-item-content-top{
-//     padding-left: 2rem;
-//     padding-right: 2rem;
-//   }
-// }
+	nav {
+		width: 100%;
+	}
+	.nav-item {
+		margin-top: 1.5rem;
+		margin-bottom: 1.5rem;
+	}
+	.nav-item:after {
+		display: none;
+	}
+	.btn-collapse,
+	.nav-bg {
+		position: fixed;
+		top: 1.5rem;
+		right: 1.5rem;
+		width: 5rem;
+		height: 5rem;
+		font-size: 2rem;
+		border-radius: 5rem;
+		text-align: center;
+		line-height: 5rem;
+		background-color: var(--primary);
+		color: white;
+		cursor: pointer;
+		z-index: 10;
+	}
+	.nav-bg {
+		background-color: #eee;
+		z-index: 8;
+		transition: transform .25s linear;
+	}
+	.nav-list {
+		flex-direction: column;
+		position: fixed;
+		left: 0;
+    	width: 100%;
+		z-index: 9;
+		transform: translateX(-100%);
+		transition: transform .25s linear;
+	}
+
+	.inp-collapse:checked + .nav-bg {
+		transform: scale(80);
+	}
+
+	.inp-ollapse:checked ~ .nav-list {
+		transform: translateX(0)
+	}
+
+	.section-item {
+		height: auto;
+		flex-direction: column;
+	}
+	.section .section-item > .section-item-img,
+	.section .section-item > .section-item-content {
+		width: 100%;
+	}
+	.section-item-content-top {
+		padding-top: 2rem;
+		padding-bottom: 2rem;
+	}
+	.images {
+		height: auto;
+		flex-direction: column;
+	}
+	.images-block {
+		width: 100%
+	}
+	.images-item {
+		height: auto;
+	}
+
+}
 
 
 
