@@ -47,10 +47,23 @@ img {
   right: 0;
   font-size: 2rem;
 }
+.header .menu__mobile {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .header .nav {
+    display: none;
+  }
+  .header .menu__mobile {
+    display: block;
+    margin-right: 700px;
+    flex-direction: column;
+  }
+}
 
 .section-header {
   padding: 8rem 1.5rem 10rem;
-  background-color: var(--bg-light);
+  background-color: #f7f7f7;
   text-align: center;
 }
 .section-img-top {
@@ -179,6 +192,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-top: 70px;
 }
 .quote-pagi .pagi-item {
   width: 13px;
@@ -288,6 +302,11 @@ img {
   font-weight: bold;
   transition: 0.2s linear;
 }
+@media screen and (max-width: 479px) {
+  .discover .discover-btn {
+    min-width: 20px;
+  }
+}
 
 .mail {
   padding: 10rem 1.5rem;
@@ -329,33 +348,36 @@ img {
   font-weight: 300;
 }
 
-.row {
+.footer {
   display: flex;
-  justify-content: space-around;
   padding: 50px;
-  padding-bottom: 10%;
+  text-align: center;
+  justify-content: space-between;
+  flex-direction: row;
 }
-.row .footer-social {
+.footer_col {
+  flex: 33.3333333%;
+}
+.footer .footer-social {
   width: 100%;
   justify-content: center;
 }
-.row .footer-social h3 {
+.footer .footer-social h3 {
   font-weight: 1000;
 }
-.row .footer-social p {
+.footer .footer-social p {
   font-style: italic;
   font-weight: 600;
 }
-.row .social-icon {
-  /* margin-top: 20px; */
-  justify-content: space-between;
+.footer .social-icon {
+  justify-content: center;
   display: flex;
-  margin-right: 160px;
+  margin-right: 13px;
 }
-.row .social-icon li {
+.footer .social-icon li {
   list-style: none;
 }
-.row .social-icon li a {
+.footer .social-icon li a {
   display: inline-block;
   width: 35px;
   height: 35px;
@@ -367,30 +389,38 @@ img {
   text-decoration: none;
   border-radius: 50%;
 }
-.row .social-icon li a .fa {
+.footer .social-icon li a .fa {
   color: #fcfafa;
   font-size: 15px;
 }
-.row .social-tw {
-  background: #7dd4ee;
-}
-.row .social-fb {
-  background: #562cf0;
-}
-.row .social-in {
-  background: #ec4040;
-}
-.row .footer-info {
+.footer-info {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
-.row .footer-info p {
-  margin-right: 10px;
+.footer-info p {
+  margin-right: 0px;
   font-style: italic;
   font-weight: 700;
 }
-.row .footer-info img {
+.footer-info img {
   margin-top: -7px;
+}
+
+@media screen and (max-width: 476px) {
+  .footer {
+    flex-direction: column;
+  }
+}
+.social-tw {
+  background: #7dd4ee;
+}
+
+.social-fb {
+  background: #562cf0;
+}
+
+.social-in {
+  background: #ec4040;
 }
 
 @media only screen and (min-width: 768px) {

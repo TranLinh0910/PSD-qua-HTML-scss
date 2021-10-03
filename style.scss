@@ -58,12 +58,28 @@ img {
     }
    
   }
+  .menu__mobile {
+    display: none;
+  }
+  @media screen and (max-width: 768px) {
+    .nav {
+      display: none;
+    }
+    // chỉnh menu mobile
+    .menu__mobile {
+      display: block;
+      // margin-top: 50px;
+      margin-right: 700px;
+      flex-direction: column;
+      
+    }
+  }
 }
 .section {
   
   &-header {
     padding: 8rem 1.5rem 10rem;
-    background-color: var(--bg-light);
+    background-color: $bg-light;
     text-align: center;
    
    
@@ -202,6 +218,7 @@ width: 33%;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-top: 70px;
     .pagi-item{
       width: 13px;
       height: 13px;
@@ -212,6 +229,7 @@ width: 33%;
     }
     .pagi-item-active {
       background-color: $text
+      
     }
   }
 }
@@ -314,7 +332,12 @@ font-weight: bold;
   outline: none;
   text-decoration: none;
   font-weight: bold;
-  transition: .2s linear;
+  transition: 0.2s linear;
+  }
+  @media screen and (max-width: 479px) {
+    .discover-btn {
+      min-width: 20px;
+    }
   }
  
 }
@@ -359,16 +382,19 @@ font-weight: bold;
 	font-weight: 300;
   }
 }
-.row{
+
+.footer{
   display: flex;
-  justify-content: space-around;
   padding: 50px;
-  padding-bottom: 10%;
-  
-
-
-.footer-social{
- width:100%;
+  text-align: center;
+  justify-content: space-between;
+  flex-direction: row;
+  &_col{
+    flex : 33.3333333%
+    
+  }
+  .footer-social{
+    width:100%;
  justify-content:center;
  h3{
    font-weight: 1000;
@@ -377,16 +403,12 @@ font-weight: bold;
    font-style: italic;
    font-weight: 600;
  }
-
-}
-
-.social-icon {
-  /* margin-top: 20px; */
-  justify-content: space-between;
-  display: flex;
-  margin-right: 160px;
-
-  li{
+  }
+  .social-icon{
+    justify-content: center;
+      display: flex;
+      margin-right: 13px;
+        li{
     list-style: none;
     a{
       display: inline-block;
@@ -406,8 +428,28 @@ font-weight: bold;
      
     }
   }
-  
+  }
+  &-info{
+    display: flex;
+    justify-content: center;
+
+    
+   p{
+     margin-right: 0px;
+     font-style: italic;
+     font-weight: 700;
+   }
+   img{
+     margin-top: -7px;
+   }
+  }
 }
+@media screen and (max-width : 476px) {
+  .footer {
+   flex-direction: column;
+  }
+ }
+
 .social-tw {
   background: #7dd4ee
 }
@@ -418,19 +460,8 @@ font-weight: bold;
 .social-in {
   background: #ec4040
 }
-.footer-info{
-  display: flex;
-  justify-content: space-between;
- p{
-   margin-right: 10px;
-   font-style: italic;
-   font-weight: 700;
- }
- img{
-   margin-top: -7px;
- }
-}
-}
+
+
 @media only screen and (min-width: 768px) {
 	.btn__collapse {
 		display: none;
